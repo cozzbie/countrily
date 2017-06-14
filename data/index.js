@@ -14,13 +14,14 @@
 var path = require("path"),
   fs = require("fs"),
   _ = require('lodash'),
-  directoryfiles = _.filter(fs.readdirSync(path.resolve("./data/")), function(v, k){ return v.indexOf(".json") > -1 });
+  glob = require('glob'),
+  directoryfiles = glob.sync("./data/*.json");
 
 module.exports = function () {
   var totalList = [];
 
   var fileList = _.map(directoryfiles, function(v, k){
-    return JSON.parse(fs.readFileSync(path.resolve("./data/", v), "utf8"));
+    return JSON.parse(fs.readFileSync(path.resolve(v), "utf8"));
   });
 
   _.forEach(fileList, function (file) {

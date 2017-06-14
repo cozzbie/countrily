@@ -16,6 +16,7 @@
     "standard": "^2.11.0"
   },
   "dependencies": {
+    "glob": "^7.1.2",
     "lodash": "^4.17.4"
   }
 }
