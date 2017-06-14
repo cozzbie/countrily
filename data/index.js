@@ -11,16 +11,22 @@
 // DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS
 // ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
-var bulkrequire = require('bulk-require')
-var _ = require('lodash')
+var path = require("path"),
+  fs = require("fs"),
+  _ = require('lodash'),
+  directoryfiles = _.filter(fs.readdirSync(path.resolve("./data/")), function(v, k){ return v.indexOf(".json") > -1 });
 
 module.exports = function () {
-  var totalList = []
-  var fileList = bulkrequire(__dirname, ['*.json'])
+  var totalList = [];
+
+  var fileList = _.map(directoryfiles, function(v, k){
+    return JSON.parse(fs.readFileSync(path.resolve("./data/", v), "utf8"));
+  });
+
   _.forEach(fileList, function (file) {
-    file.ISO[2] = file.ISO.alpha2
-    file.ISO[3] = file.ISO.alpha3
-    totalList.push(file)
-  })
-  return totalList
+    file.ISO[2] = file.ISO.alpha2;
+    file.ISO[3] = file.ISO.alpha3;
+    totalList.push(file);
+  });
+  return totalList;
 }
