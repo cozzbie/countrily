@@ -4,12 +4,13 @@
   "description": "A country information library",
   "main": "index.js",
   "scripts": {
-    "test": "test.js"
+    "test": "mocha"
   },
   "author": "Timi Aiyemo",
   "license": "ISC",
   "devDependencies": {
-    "chai": "^2.1.0",
+    "@types/mocha": "^2.2.41",
+    "chai": "^2.3.0",
     "istanbul": "^0.3.7",
     "mocha": "^2.1.0",
     "standard": "^2.11.0"
