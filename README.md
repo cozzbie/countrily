@@ -31,10 +31,7 @@ Based off the work of the authors of [countryjs](https://github.com/progressclai
   * [`.tld()`](#tld)
   * [`.translations()`](#translations)
   * [`.wiki()`](#wiki)
-  * [`.all()`](#all)
-* [Special Thanks](#special-thanks)
-* [Contributing](#contributing)
-* [Changelog](#changelog)
+* [Static methods](static-methods)
 * [Disclaimer](#disclaimer)
 * [License (ISC)](#license-isc)
 
@@ -316,6 +313,8 @@ nigeria.wiki();
 // "http://en.wikipedia.org/wiki/Nigeria"
 ```
 
+## Static methods
+
 Two static methods are exposed to return all data and shortnames
 
 ### `.all()`
@@ -338,6 +337,15 @@ Country.all();
 //     ...
 // },
 // ...]
+```
+
+### `.shortnamesofall()`
+
+Return an array of all the shortnames (ISO2) of all the countries.
+
+```javascript
+var Country = require('countrily');
+Country.shortnamesofall();
 ```
 
 ## Test
