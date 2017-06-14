@@ -31,7 +31,9 @@ Based off the work of the authors of [countryjs](https://github.com/progressclai
   * [`.tld()`](#tld)
   * [`.translations()`](#translations)
   * [`.wiki()`](#wiki)
-* [Static methods](static-methods)
+* [Static methods](#static-methods)
+  * [`.all()`](#all)
+  * [`.shortnamesofall()`](#shortnamesofall)
 * [Disclaimer](#disclaimer)
 * [License (ISC)](#license-isc)
 
