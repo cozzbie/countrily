@@ -13,17 +13,12 @@
 
 var path = require("path"),
   fs = require("fs"),
-  _ = require('lodash'),
-  glob = require('glob'),
-  directoryfiles = glob.sync("./data/*.json"),
-  fileList = _.map(directoryfiles, function (v) { return require(path.resolve(v))});
+  _ = require("lodash"),
+  fileList = require(path.resolve("./build/data.json"));
+
 
 module.exports = function () {
   var totalList = [];
-
-  // var fileList = _.map(directoryfiles, function(v, k){
-  //   return JSON.parse(fs.readFileSync(path.resolve(v), "utf8"));
-  // });
 
   _.forEach(fileList, function (file) {
     file.ISO[2] = file.ISO.alpha2;
@@ -31,4 +26,4 @@ module.exports = function () {
     totalList.push(file);
   });
   return totalList;
-}
+};

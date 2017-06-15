@@ -1,6 +1,6 @@
 # countrily.js
 
-Based off the work of the authors of [countryjs](https://github.com/progressclaim/countryjs), This is Node.js module for returning data about countries.
+Inspired by the work of the authors of [countryjs](https://github.com/progressclaim/countryjs), This is Node.js module for returning data about countries but can also be run in the browser unlike the former project.
 
 ## Table of Contents
 
@@ -41,7 +41,11 @@ Based off the work of the authors of [countryjs](https://github.com/progressclai
 
 ```bash
 npm install countrily
+cd node_modules/countrily
+npm run build
 ```
+
+The Build command builds the data.json file for easy compilation for webpack.
 
 ## Usage
 
@@ -58,10 +62,10 @@ To access one of the country properties available, you'll need to use one of the
 Returns all available information for a specified country.
 
 ```JavaScript
-var Country = require('countrily');
-var nigeria = new Country('NGA', 'ISO3'); // 'ISO2', 'ISO3', 'name'
-var nigeria = new Country('NG');  // Defaults to ISO2
-country.info();
+var Countrily = require('countrily');
+var nigeria = new Countrily('NGA', 'ISO3'); // 'ISO2', 'ISO3', 'name'
+var nigeria = new Countrily('NG');  // Defaults to ISO2
+nigeria.info();
 // returns object,
 // {
 //     "name": "Nigeria",
@@ -81,9 +85,9 @@ country.info();
 Returns all states/provinces for a specified country.
 
 ```JavaScript
-var Country = require('countrily');
-var nigeria = Country('NG', 'ISO2'); // 'ISO2', 'ISO3', 'name'.
-var nigeria = Country('NG')
+var Countrily = require('countrily');
+var nigeria = Countrily('NG', 'ISO2'); // 'ISO2', 'ISO3', 'name'.
+var nigeria = Countrily('NG')
 nigeria.states();
 // returns array of states,
 // [
@@ -101,9 +105,9 @@ Alias of [`.states()`]()
 Returns name for a specified country
 
 ```javascript
-var Country = require('countrily');
-var nigeria = Country('NGA', 'ISO3'); // 'ISO2', 'ISO3', 'name'
-var nigeria = Country('NG'); // Defaults to 'ISO2'
+var Countrily = require('countrily');
+var nigeria = Countrily('NGA', 'ISO3'); // 'ISO2', 'ISO3', 'name'
+var nigeria = Countrily('NG'); // Defaults to 'ISO2'
 country.name() // Defaults to 'ISO2'
 // returns string
 // "Nigeria"
@@ -324,8 +328,8 @@ Two static methods are exposed to return all data and shortnames
 Return all country data. This will be super big. Not recommended.
 
 ```javascript
-var Country = require('countrily');
-Country.all();
+var Countrily = require('countrily');
+Countrily.all();
 // returns array of objects,
 // [{
 //     "name": "Nigeria",
@@ -346,8 +350,8 @@ Country.all();
 Return an array of all the shortnames (ISO2) of all the countries.
 
 ```javascript
-var Country = require('countrily');
-Country.shortnamesofall();
+var Countrily = require('countrily');
+Countrily.shortnamesofall();
 ```
 
 ## Test

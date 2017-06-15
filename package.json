@@ -4,9 +4,10 @@
   "description": "A country information library",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "build": "node ./build/index.js"
   },
-  "author": "Timi Aiyemo",
+  "author": "Timi Aiyemo <cozzbie@gmail.com>",
   "license": "ISC",
   "devDependencies": {
     "@types/mocha": "^2.2.41",
