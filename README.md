@@ -41,12 +41,7 @@ Inspired by the work of the authors of [countryjs](https://github.com/progresscl
 
 ```bash
 npm install countrily
-cd node_modules/countrily
-npm run build
 ```
-
-The Build command builds the data.json file for easy compilation for webpack.
-
 ## Usage
 
 To access one of the country properties available, you'll need to use one of the API methods listed below and pass a country in either way:
