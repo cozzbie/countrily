@@ -1,0 +1,43 @@
+name: NPM publish CD workflow
+
+on:
+  release:
+    types: [push]
+
+jobs:
+  buildTestDeploy:
+    name: Build and Test
+    runs-on: ubuntu-latest
+
+    strategy:
+            matrix:
+                node-version: [8.x, 10.x, 12.x]
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: npm i
+
+      - name: Run tests
+        run: npm run test
+      
+      - name: Configure git
+        run:
+        - git config --global user.name "Timi Aiyemo"
+        - git config --global user.email "cozzbie@gmail.com"
+        - npm version minor
+        - git commit -am 'update package'
+      
+      - name: Configure package registry
+        run: npm config set '//registry.npmjs.org/:_authToken' "${{ secrets.NPM_TOKEN }}"
+      
+      - name: Publish to NPM
+        run: npm publish
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      # push the version changes to GitHub
+      - run: git push
+        env:
+          # The secret is passed automatically. Nothing to configure.
+          github-token: ${{ secrets.GITHUB_TOKEN }}
