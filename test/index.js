@@ -1,19 +1,19 @@
 "use-strict";
 
-var expect = require('chai').expect;
-var Country = require("../");
+const expect = require('chai').expect;
+const Country = require("../");
 
-describe('contrily', function () {
+describe('contrily', () => {
 
-    it('should get all the countries', function (done) {
-        var countries = Country.all();
+    it('should get all the countries', done => {
+        const countries = Country.all();
         expect(countries).to.be.an('array');
         expect(countries.length).to.equal(251);
         done();
     });
     
-    it('should get all the countries shortnames', function (done) {
-        var shortnames = Country.shortnamesofall();
+    it('should get all the countries shortnames', done => {
+        const shortnames = Country.shortnamesofall();
         expect(shortnames).to.be.an('array');
         expect(shortnames.length).to.equal(251);
         expect(shortnames[0]).to.be.a("string");
@@ -21,16 +21,23 @@ describe('contrily', function () {
         done();
     });
 
-    it('should get a selected country', function (done) {
-        var country = new Country("NG");
+    it('should get a selected country', done => {
+        const country = new Country("NG");
         expect(country).to.be.an('object');
         done();
     });
 
-    it('should get a selected countries states', function (done) {
-        var country = new Country("NG");
-        var states = country.states();
+    it('should get a selected countries states', done => {
+        const country = new Country("NG");
+        const states = country.states();
         expect(states).to.be.an('array');
+        done();
+    });
+
+    it('should get a lean, single structure if array', done => {
+        const lean = Country.lean('name');
+        expect(lean).to.be.an('array');
+        expect(lean[0]).to.be.a('string');
         done();
     });
 });
