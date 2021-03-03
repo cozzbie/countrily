@@ -9,15 +9,15 @@
   "author": "Timi Aiyemo <cozzbie@gmail.com>",
   "license": "ISC",
   "devDependencies": {
-    "@types/mocha": "^2.2.41",
-    "chai": "^2.3.0",
-    "istanbul": "^0.3.7",
-    "mocha": "^2.1.0",
-    "standard": "^2.11.0"
+    "@types/mocha": "^8.2.1",
+    "chai": "^4.3.1",
+    "mocha": "^8.3.0",
+    "nyc": "^15.1.0",
+    "standard": "^16.0.3"
   },
   "dependencies": {
-    "countrily-data": "^1.0.0",
-    "glob": "^7.1.2",
-    "lodash": "^4.17.4"
+    "countrily-data": "^1.0.1",
+    "glob": "^7.1.6",
+    "lodash": "^4.17.21"
   }
 }
