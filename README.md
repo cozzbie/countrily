@@ -34,6 +34,7 @@ Inspired by the work of the authors of [countryjs](https://github.com/progresscl
 * [Static methods](#static-methods)
   * [`.all()`](#all)
   * [`.shortnamesofall()`](#shortnamesofall)
+  * [`.lean()`](#lean)
 * [Disclaimer](#disclaimer)
 * [License (ISC)](#license-isc)
 
@@ -347,6 +348,26 @@ Return an array of all the shortnames (ISO2) of all the countries.
 ```javascript
 var Countrily = require('countrily');
 Countrily.shortnamesofall();
+```
+### `.lean(field)`
+
+Return an array of field entered.
+
+```javascript
+const Countrily = require('countrily');
+Countrily.lean('name');
+
+['Afghanistan',
+  'Albania',
+  'Algeria',
+  'American Samoa',
+  'Angola',
+  'Anguilla',
+  'Antigua and Barbuda',
+  'Argentina',
+  'Armenia',
+  'Aruba',
+  ...]
 ```
 
 ## Test
