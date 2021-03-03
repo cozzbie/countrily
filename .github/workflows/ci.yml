@@ -1,8 +1,7 @@
 name: NPM publish CD workflow
 
 on:
-  release:
-    types: [push]
+  push:
 
 jobs:
   buildTestDeploy:
@@ -23,11 +22,11 @@ jobs:
         run: npm run test
       
       - name: Configure git
-        run:
-        - git config --global user.name "Timi Aiyemo"
-        - git config --global user.email "cozzbie@gmail.com"
-        - npm version minor
-        - git commit -am 'update package'
+        run: |
+          git config --global user.name "Timi Aiyemo"
+          git config --global user.email "cozzbie@gmail.com"
+          npm version minor
+          git commit -am 'update package'
       
       - name: Configure package registry
         run: npm config set '//registry.npmjs.org/:_authToken' "${{ secrets.NPM_TOKEN }}"
