@@ -1,7 +1,7 @@
 {
   "name": "countrily",
   "version": "1.3.0",
-  "description": "A country information library",
+  "description": "A country list and information library",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
@@ -19,5 +19,17 @@
     "countrily-data": "^1.0.1",
     "glob": "^7.1.6",
     "lodash": "^4.17.21"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cozzbie/countrily.git"
+  },
+  "keywords": [
+    "country",
+    "country list",
+    "countries",
+    "ISO 3166-1-alpha-2",
+    "ISO 3166-1"
+  ],
+  "homepage": "https://github.com/cozzbie/countrily"
 }
