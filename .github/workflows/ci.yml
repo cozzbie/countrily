@@ -21,6 +21,11 @@ jobs:
       - name: Run tests
         run: npm run test
 
+      - name: Configure git
+        run: |
+          git config --global user.name "Timi Aiyemo"
+          git config --global user.email "cozzbie@gmail.com"
+
       - name: Configure package registry
         run: npm config set '//registry.npmjs.org/:_authToken' "${{ secrets.NPM_TOKEN }}"
       
