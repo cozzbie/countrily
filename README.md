@@ -1,6 +1,6 @@
 # countrily
 
-Inspired by the work of the authors of [countryjs](https://github.com/progressclaim/countryjs), this is a Node.js module for returning data about countries but can also be run in the browser unlike the original project.
+Inspired by the work of the authors of [countryjs](https://github.com/progressclaim/countryjs), this is a Node.js module for returning data about countries but can also be run in the browser unlike the original project. Use this to get a list of countries and their corresponding meta data
 
 ## Table of Contents
 
