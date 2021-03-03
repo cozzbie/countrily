@@ -20,11 +20,18 @@ jobs:
 
       - name: Run tests
         run: npm run test
-      
+
       - name: Configure package registry
         run: npm config set '//registry.npmjs.org/:_authToken' "${{ secrets.NPM_TOKEN }}"
       
       - name: Publish to NPM
-        run: npm publish
+        run: |
+          npm version patch
+          npm publish
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      
+      - name: Push to Github
+        run: git push
+        env:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
